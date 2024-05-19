@@ -1,15 +1,21 @@
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book(book_path)
-    num_words = number_of_words(text)
-    print(f"{num_words} words found in the text")
-    num_letters = number_of_letters(text)
-    sort_on(num_letters)
 
-def sort_on(dict):
-    
-    for key, value in dict:
-        print(f"The {key} character was found {value} times")
+    num_words = number_of_words(text)
+    print(f"{num_words} words found in the text\n")
+
+    num_letters = number_of_letters(text)
+    sort_dict(num_letters)
+
+    print("--- End Report ---")
+
+def sort_dict(dict):
+    char_list = [{"char": char, "num": count} for char, count in dict.items()]
+    char_list.sort(key=lambda x: x["num"], reverse=True)
+
+    for item in char_list:
+        print(f"The '{item['char']}' character was found {item['num']} times")
 
 def number_of_letters(text):
     lowered_letters = text.lower()
