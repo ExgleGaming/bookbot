@@ -4,7 +4,10 @@ from stats import number_of_letters
 from stats import sort_dict
 
 def main():
-    path = sys.argv
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path = sys.argv[1]
     book = get_book_text(path)
     num_words = number_of_words(book)
     num_letters = number_of_letters(book)
