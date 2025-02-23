@@ -1,5 +1,7 @@
 def sort_dict(num_letters_dict):
-    pass
+    sorted_items = sorted(num_letters_dict.items(), key=lambda item: item[1], reverse=True)
+    sorted_dict = {key: value for key, value in sorted_items}
+    return sorted_dict
 
 def number_of_letters(text):
     lower_text = text.lower()
