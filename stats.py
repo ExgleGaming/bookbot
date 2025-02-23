@@ -16,8 +16,4 @@ def number_of_letters(text):
 
 def number_of_words(text):
     words = text.split()
-    count = 0
-    for word in words:
-        if word in words:
-            count += 1
-    return count
+    return len(words)

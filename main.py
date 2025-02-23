@@ -24,7 +24,6 @@ def main():
 
 def get_book_text(filepath):
     with open(filepath) as p:
-        text = p.read()
-    return text
+        return p.read()
 
 main()
